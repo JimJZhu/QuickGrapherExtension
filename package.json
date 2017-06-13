@@ -1,5 +1,5 @@
 {
-    "name": "Quick Graph",
+    "name": "QuickGraph",
     "version": "1.0.0",
     "description": "Quick graphing extension.",
     "main": "popup.js",
@@ -17,8 +17,9 @@
         "build-js": "mkdir -p dist/js && uglifyjs src/js/popup.js -m -o dist/js/popup.min.js && npm run copy",
         "clean": "rm -R dist",
         "clean-build": "npm run clean && npm run build-js",
-        "lint": "jshint src/**.js",
-        "dev": "lite-server"
+        "zip": "bestzip bundle.zip dist/*",
+        "deploy": "npm run build && npm run zip",
+        "lint": "jshint src/**.js"
     },
     "repository": {
         "type": "git",
