@@ -1,2 +1,2 @@
 # TestChromeExtension
-Basic chrome extension
+Testing a basic graphing chrome extension.
