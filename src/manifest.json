@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+
+    "name": "Jim's graphing extension.",
+    "description": "This extension will graph provided data quickly.",
+    "version": "1.1",
+
+    "browser_action": {
+        "default_icon": "/resources/icon.png",
+        "default_popup": "/html/popup.html",
+        "default_title": "Graph here!"
+    },
+    "permissions": [
+        "activeTab"
+    ]
+}

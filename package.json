@@ -1,0 +1,31 @@
+{
+    "name": "testext",
+    "version": "1.0.0",
+    "description": "Basic chrome extension",
+    "main": "popup.js",
+    "dependencies": {
+        "chart.js": "^2.6.0"
+    },
+    "devDependencies": {
+        "concurrently": "^3.4.0",
+        "jshint": "^2.9.4",
+        "uglify-js": "^3.0.15"
+    },
+    "scripts": {
+        "copy": "cp -rf src/html dist && cp -rf src/resources dist && cp src/manifest.json dist",
+        "build-js": "mkdir -p dist/js && uglifyjs src/js/popup.js -m -o dist/js/popup.js && npm run copy",
+        "clean": "rm -R dist",
+        "clean-build": "npm run clean && npm run build-js",
+        "lint": "jshint src/**.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JimJZhu/TestChromeExtension.git"
+    },
+    "author": "Jim J Zhu",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/JimJZhu/TestChromeExtension/issues"
+    },
+    "homepage": "https://github.com/JimJZhu/TestChromeExtension#readme"
+}
