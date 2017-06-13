@@ -12,8 +12,8 @@
         "uglify-js": "^3.0.15"
     },
     "scripts": {
-        "copy": "cp -rf src/html dist && cp -rf src/resources dist && cp src/manifest.json dist",
-        "build-js": "mkdir -p dist/js && uglifyjs src/js/popup.js -m -o dist/js/popup.js && npm run copy",
+        "copy": "cp -rf src/html dist && cp -rf src/resources dist && cp src/manifest.json dist && cp -rf src/scripts dist",
+        "build-js": "mkdir -p dist/js && uglifyjs src/js/popup.js -m -o dist/js/popup.min.js && npm run copy",
         "clean": "rm -R dist",
         "clean-build": "npm run clean && npm run build-js",
         "lint": "jshint src/**.js"
