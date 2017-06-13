@@ -18,7 +18,7 @@
         "clean": "rm -R dist",
         "clean-build": "npm run clean && npm run build-js",
         "zip": "bestzip bundle.zip dist/*",
-        "deploy": "npm run build && npm run zip",
+        "deploy": "npm run build-js && npm run zip",
         "lint": "jshint src/**.js"
     },
     "repository": {
