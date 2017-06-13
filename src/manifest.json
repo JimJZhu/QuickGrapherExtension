@@ -2,9 +2,10 @@
     "manifest_version": 2,
 
     "name": "Quick Graph",
+    "short_name": "QuickGraph",
     "description": "Graph data on the fly!",
     "version": "1.0",
-    "author": "Jim J Zhu",
+    "author": "JimJZhu",
     "icons": {
         "16": "/resources/icon16.png",
         "48": "/resources/icon48.png",
