@@ -31,8 +31,8 @@ function click() {
                     fill: false,
                     pointRadius: 5,
                     pointBorderWidth: 2,
-                    pointBackgroundColor: 'rgba(65, 184, 131, 0.4)',
-                    pointBorderColor: 'rgba(16, 90, 30, 0.9)',
+                    pointBackgroundColor: 'rgba(146, 211, 146, 0.4)',
+                    pointBorderColor: 'rgba(0, 58, 0, 0.9)',
                 }]
             },
             options: {
