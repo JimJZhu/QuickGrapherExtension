@@ -4,7 +4,8 @@
     "description": "Quick graphing extension.",
     "main": "popup.js",
     "dependencies": {
-        "chart.js": "^2.6.0"
+        "chart.js": "^2.6.0",
+        "concurrently": "^3.4.0"
     },
     "devDependencies": {
         "concurrently": "^3.4.0",
@@ -13,12 +14,13 @@
         "uglify-js": "^3.0.15"
     },
     "scripts": {
-        "copy": "cp -rf src/html dist && cp -rf src/resources dist && cp src/manifest.json dist && cp -rf src/scripts dist",
-        "build-js": "mkdir -p dist/js && uglifyjs src/js/popup.js -m -o dist/js/popup.min.js && npm run copy",
+        "copy": "cp -rf src/resources dist && cp src/manifest.json dist && cp -rf src/scripts dist",
+        "build-js": "mkdir -p dist/html && mkdir -p dist/js && mkdir -p dist/css && pug src/html/popup.pug -o dist/html/ && uglifyjs src/js/popup.js -m -o dist/js/popup.min.js && stylus src/css/stylesheet.styl -o dist/css/stylesheet.css && npm run copy",
         "clean": "rm -R dist",
         "clean-build": "npm run clean && npm run build-js",
         "zip": "cd dist && bestzip ../bundle.zip .",
         "deploy": "npm run build-js && npm run zip",
+        "watch": "concurrently 'stylus -w src/css/stylesheet.styl -o dist/css/stylesheet.css' 'pug -w src/html/popup.pug -o dist/html/' ",
         "lint": "jshint src/**.js"
     },
     "repository": {
