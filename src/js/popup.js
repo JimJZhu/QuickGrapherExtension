@@ -22,8 +22,17 @@ function click() {
             point.y = yInt;
             userData.push(point);
         }
+
+        var buttons = document.getElementsByName('radio');
+        var graphType = 'scatter';
+        for (var i = 0, length = buttons.length; i < length; i++) {
+            if (buttons[i].checked) {
+                graphType = buttons[i].value;
+                break;
+            }
+        }
         var myChart = new Chart(ctx, {
-            type: 'scatter',
+            type: graphType,
             data: {
                 datasets: [{
                     label: 'Scatter Data',
@@ -42,7 +51,9 @@ function click() {
                         position: 'bottom'
                     }]
                 },
-                showLines: false,
+                showLines: graphType === 'line',
+                responsive: true,
+                maintainAspectRatio: true
             }
         });
     } catch (err) {
